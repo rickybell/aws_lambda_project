@@ -5,7 +5,8 @@ resource "null_resource" "install_layer_deps" {
 
   provisioner "local-exec" {
     working_dir = "${local.layers_path}/got/nodejs"
-    command     = "npm install --production"
+    command     = "npm install"
+    # command     = "npm install --production"
   }
 }
 
@@ -21,7 +22,7 @@ data "archive_file" "got_layer" {
 
 resource "aws_lambda_layer_version" "got" {
   layer_name          = "got-layer"
-  description         = "got: ^12.5.3"
+  description         = "got: ^12.6.0"
   filename            = data.archive_file.got_layer.output_path
   source_code_hash    = data.archive_file.got_layer.output_base64sha256
   compatible_runtimes = ["nodejs14.x"]

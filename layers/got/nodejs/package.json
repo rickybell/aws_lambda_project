@@ -1,8 +1,4 @@
 {
-  "dependencies": {
-    "got": "^12.5.3",
-    "node-fetch": "^1.7.3"
-  },
   "name": "nodejs",
   "version": "1.0.0",
   "main": "index.js",
@@ -12,5 +8,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "got": "^12.6.0"
+  },
+  "engines": {
+    "node": "14.x"
+  }
 }

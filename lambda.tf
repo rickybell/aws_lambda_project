@@ -8,7 +8,8 @@ resource "aws_lambda_function" "cat_api" {
   function_name = "cat_api"
   handler       = "index.handler"
   role          = aws_iam_role.cat_api_lambda.arn
-  runtime       = "nodejs18.x"
+  runtime       = "nodejs14.x"
+  publish       = "true"
 
   filename         = data.archive_file.cat_api_artefact.output_path
   source_code_hash = data.archive_file.cat_api_artefact.output_base64sha256
