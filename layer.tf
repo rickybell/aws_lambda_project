@@ -24,5 +24,5 @@ resource "aws_lambda_layer_version" "got" {
   description         = "got: ^12.5.3"
   filename            = data.archive_file.got_layer.output_path
   source_code_hash    = data.archive_file.got_layer.output_base64sha256
-  compatible_runtimes = ["nodejs14.x"]
+  compatible_runtimes = ["nodejs16.x"]
 }

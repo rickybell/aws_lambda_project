@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "rm -rf dist",
+    "build": "esbuild index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js",
+    "postbuild": "cd dist && zip -r index.zip index.js*"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rickybell",
   "license": "ISC",
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.114",
+    "esbuild": "^0.17.18",
     "got": "^12.5.3",
     "node-fetch": "^1.7.3"
   }

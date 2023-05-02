@@ -130,3 +130,7 @@ dist
 .pnp.*
 .terraform
 .terraform.lock.hcl
+
+files/
+terraform.tfstate.backup
+terraform.tfstate
