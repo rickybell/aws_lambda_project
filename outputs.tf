@@ -18,3 +18,7 @@ output "lambdas" {
     last_modified = aws_lambda_function.cat_api.last_modified
   }]
 }
+
+output "base_url" {
+  value = aws_api_gateway_deployment.deployment_lambda_cat_api.invoke_url
+}
